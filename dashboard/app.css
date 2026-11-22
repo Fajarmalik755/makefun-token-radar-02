@@ -1,0 +1,103 @@
+:root {
+  --bg: #0d1117; --panel: #161b22; --panel2: #1c2128; --line: #30363d;
+  --text: #e6edf3; --muted: #8b949e; --dim: #6e7681;
+  --accent: #58a6ff; --gold: #e3b341;
+  --farm: #3fb950; --thin: #d29922; --skip: #f85149;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font: 13px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 8px; top: 8px; background: var(--panel); padding: 6px 10px; z-index: 9; }
+.wrap { max-width: 1360px; margin: 0 auto; padding: 16px 20px 40px; }
+header.top { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; }
+header.top h1 { font-size: 21px; margin: 0; letter-spacing: -0.3px; }
+header.top h1 span { color: var(--gold); }
+header.top .sub { color: var(--muted); font-size: 12.5px; }
+nav.tabs { display: flex; gap: 4px; margin: 14px 0 0; border-bottom: 1px solid var(--line); }
+nav.tabs a {
+  padding: 7px 13px; color: var(--muted); border: 1px solid transparent;
+  border-bottom: none; border-radius: 6px 6px 0 0; font-weight: 600;
+}
+nav.tabs a.on { color: var(--text); background: var(--panel); border-color: var(--line); }
+.strip {
+  margin: 14px 0 0; padding: 10px 14px; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 8px; font-size: 12.5px;
+}
+.strip b { color: var(--gold); }
+.strip .ok { color: var(--farm); font-weight: 700; }
+.kpis { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 0; }
+.kpi {
+  flex: 1 1 150px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 8px; padding: 9px 12px;
+}
+.kpi .k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; }
+.kpi .v { font-size: 17px; font-weight: 700; margin-top: 1px; }
+.kpi .n { color: var(--dim); font-size: 11.5px; }
+.filters {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  margin: 14px 0 10px;
+}
+.filters label { color: var(--muted); font-size: 12px; }
+.filters select, .filters input[type="search"] {
+  background: var(--panel2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 6px; padding: 6px 8px; font: inherit; font-size: 12.5px;
+}
+.filters input[type="search"] { min-width: 170px; }
+.filters .count { margin-left: auto; color: var(--muted); font-size: 12px; }
+table.board { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+table.board th, table.board td { padding: 6px 9px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.board th:first-child, table.board td:first-child { text-align: center; }
+table.board th:nth-child(2), table.board td:nth-child(2),
+table.board th:nth-child(3), table.board td:nth-child(3),
+table.board th:nth-child(4), table.board td:nth-child(4) { text-align: left; }
+table.board th { background: var(--panel2); color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+table.board th button { background: none; border: none; color: inherit; font: inherit; cursor: pointer; padding: 0; }
+table.board th button:hover { color: var(--text); }
+table.board tbody tr:hover { background: var(--panel2); }
+table.board td.name { font-weight: 600; }
+table.board td.name a { color: var(--text); }
+table.board td.name a:hover { color: var(--accent); }
+table.board td.ev { font-weight: 700; }
+.wl { color: var(--gold); font-weight: 700; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.pill.FARM { background: rgba(63, 185, 80, 0.16); color: var(--farm); }
+.pill.THIN { background: rgba(210, 153, 34, 0.16); color: var(--thin); }
+.pill.SKIP { background: rgba(248, 81, 73, 0.14); color: var(--skip); }
+.neg { color: var(--skip); }
+.pos { color: var(--farm); }
+.detail { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; margin-top: 14px; }
+.detail h2 { margin: 0 0 2px; font-size: 19px; }
+.detail .meta { color: var(--muted); font-size: 12.5px; margin-bottom: 12px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.card h3 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
+table.kv { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.kv td { padding: 3px 0; border-bottom: 1px solid var(--line); }
+table.kv td:first-child { color: var(--muted); width: 46%; }
+table.kv td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+table.kv tr:last-child td { border-bottom: none; }
+ol.farm { margin: 0; padding-left: 20px; font-size: 12.5px; }
+ol.farm li { margin: 7px 0; }
+ol.farm .ct { color: var(--muted); }
+.verdict-box { font-size: 15px; font-weight: 700; padding: 10px 14px; border-radius: 8px; margin-top: 12px; }
+.verdict-box.FARM { background: rgba(63, 185, 80, 0.14); color: var(--farm); }
+.verdict-box.THIN { background: rgba(210, 153, 34, 0.14); color: var(--thin); }
+.verdict-box.SKIP { background: rgba(248, 81, 73, 0.12); color: var(--skip); }
+.method { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; margin-top: 14px; }
+.method h2 { margin: 0 0 8px; font-size: 18px; }
+.method h3 { margin: 18px 0 6px; font-size: 14px; }
+.method p, .method li { font-size: 13px; color: var(--text); }
+.method .muted { color: var(--muted); }
+.method code { background: var(--panel2); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+.method table { border-collapse: collapse; font-size: 12.5px; margin: 6px 0; }
+.method table th, .method table td { border: 1px solid var(--line); padding: 5px 9px; text-align: right; }
+.method table th:first-child, .method table td:first-child { text-align: left; }
+.method table th { background: var(--panel2); color: var(--muted); }
+.note { margin-top: 16px; color: var(--muted); font-size: 12px; }
+footer { margin-top: 22px; color: var(--dim); font-size: 11.5px; }
